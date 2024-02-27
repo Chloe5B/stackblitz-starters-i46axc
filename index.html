@@ -18,10 +18,19 @@
     </nav>
     <main>
       <h1>Home page</h1>
-      <form method="get" action="https://script.google.com/macros/s/AKfycbwnTj9WlpEWsXsu8xCj32m31mCGpDsOdk00JDG9Rr8ws9GZdY600rExuLkATlKSem65Sg/exec">
-        text:<input type="text" name="a"><br>
-        password: <input type="password" name="b"><br>
+      <form 
+      id="formId"
+       method="get" action="https://script.google.com/macros/s/AKfycbwnTj9WlpEWsXsu8xCj32m31mCGpDsOdk00JDG9Rr8ws9GZdY600rExuLkATlKSem65Sg/exec">
+        text:<input type="text" name="a" id="textId"><br>
+        password: <input type="password" name="b" id="passwordId"><br>
         <input type ="submit">
     </main>
+    <script>
+      document.getElementById ("formId").addEventListener('submit',e=>{
+        e.preventDefault()
+        const text =document.getElementById('textId').ariaValueMax
+        console.log('hello js')
+      })
+      </script>
   </body>
 </html>

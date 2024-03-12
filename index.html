@@ -26,10 +26,15 @@
         <input type ="submit">
     </main>
     <script>
-      document.getElementById ("formId").addEventListener('submit',e=>{
+      document.getElementById ("formId").addEventListener('submit',async e=>{
         e.preventDefault()
-        const text =document.getElementById('textId').ariaValueMax
-        console.log('hello js')
+        const text =document.getElementById('textId').value
+        const password=document.getElementById('passwordId').value
+        document.getElementById('formId').innerText="Loading..."
+      const res=await fetch(`https://script.google.com/macros/s/AKfycbwnTj9WlpEWsXsu8xCj32m31mCGpDsOdk00JDG9Rr8ws9GZdY600rExuLkATlKSem65Sg/exec`
+       +`?a=${text}&b=${password}`)
+       const resText=await res.text()
+       document.getElementById('formId').innerText=resText
       })
       </script>
   </body>
